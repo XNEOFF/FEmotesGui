@@ -3,7 +3,7 @@
 
 game:GetService("StarterGui"):SetCore("SendNotification",{
                 Title = "Welcome to the Emote GUI!",
-                Text = "Please wait, it takes a moment!",
+                Text = "Please wait, it may take a moment! If it takes 30 seconds, kill the GUI and execute it again",
                  Duration = 1})
 
 if game:GetService("CoreGui"):FindFirstChild("Emotes") then
