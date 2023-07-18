@@ -1,10 +1,10 @@
---- Keybind to open for pc is "command" -> " , "
+-- Keybind to open for pc is "command" -> " , "
 -- Made by XNEO
 
 game:GetService("StarterGui"):SetCore("SendNotification",{
-                Title = "Tips!",
-                Text = "Please wait for 1-15 seconds to display the GUI. If it does not appear, please try executing it again. Additionally, please destroy the old GUI First",
-                 Duration = 15})
+                Title = "Welcome to the Emote GUI!",
+                Text = "Please wait, it takes a moment!",
+                 Duration = 1})
 
 if game:GetService("CoreGui"):FindFirstChild("Emotes") then
     game:GetService("CoreGui"):FindFirstChild("Emotes"):Destroy()
@@ -37,7 +37,7 @@ local function AddEmote(name: string, id: IntValue, price: IntValue?)
 			return DateTime.fromIsoDate(updated):ToUniversalTime()
 		end)
 		if not success then
-			task.wait(10)
+			task.wait(1)
 			AddEmote(name, id, price)
 			return
 		end
@@ -336,7 +336,6 @@ if not game:IsLoaded() then
 	game.Loaded:Wait()
 end
 
---thanks inf yield
 local SynV3 = syn and DrawingImmediate
 if (not is_sirhurt_closure) and (not SynV3) and (syn and syn.protect_gui) then
 	syn.protect_gui(ScreenGui)
@@ -422,12 +421,10 @@ while true do
 	end
 end
 
---unreleased emotes
 AddEmote("Arm Wave", 5915773155)
 AddEmote("Head Banging", 5915779725)
 AddEmote("Face Calisthenics", 9830731012)
 
---wait for emotes to finish loading
 
 local function EmotesLoaded()
 	for i, loaded in pairs(LoadedEmotes) do
@@ -442,7 +439,6 @@ while not EmotesLoaded() do
 end
 Loading:Destroy()
 
---sorting options setup
 table.sort(Emotes, function(a, b)
 	return a.lastupdated > b.lastupdated
 end)
@@ -630,6 +626,6 @@ game.CoreGui.Emotes.Enabled = true
 game:GetService("StarterGui"):SetCore("SendNotification",{
                 Title = "Done!",
                 Text = "Emotes gui is here!",
-                 Duration = 10})
+                 Duration = 1})
 
 game.Players.LocalPlayer.PlayerGui.ContextActionGui:Destroy()
