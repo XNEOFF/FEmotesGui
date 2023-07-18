@@ -37,7 +37,7 @@ local function AddEmote(name: string, id: IntValue, price: IntValue?)
 			return DateTime.fromIsoDate(updated):ToUniversalTime()
 		end)
 		if not success then
-			task.wait(1)
+			task.wait(30)
 			AddEmote(name, id, price)
 			return
 		end
