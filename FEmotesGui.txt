@@ -37,7 +37,7 @@ local function AddEmote(name: string, id: IntValue, price: IntValue?)
 			return DateTime.fromIsoDate(updated):ToUniversalTime()
 		end)
 		if not success then
-			task.wait(30)
+			task.wait(1)
 			AddEmote(name, id, price)
 			return
 		end
@@ -404,7 +404,7 @@ while true do
 			return game:HttpGetAsync("https://catalog.roblox.com/v1/search/items/details?Category=12&Subcategory=39&SortType=1&SortAggregation=&limit=30&IncludeNotForSale=true&cursor=".. Cursor)
 		end)
 		if not success then
-			task.wait(10)
+			task.wait(1)
 			return Request()
 		end
 		return Response
